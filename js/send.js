@@ -79,7 +79,7 @@ $("#sendTx").click(function () {
         feeShow = convertAmountFormat(fee)
     }
     else {
-        fee = 1000
+        fee = 10000
         feeShow = convertAmountFormat(fee)
     }
     // Don't put fee in convertion of amount format
