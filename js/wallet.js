@@ -8,7 +8,7 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
 
 
 // Define variable to set QR Code
-var sugarqrcode = new QRCode(document.getElementById("sugarqr"), {
+var bteqrcode = new QRCode(document.getElementById("bteqr"), {
     width: 100,
     height: 100,
     position: "center"
@@ -31,17 +31,17 @@ window.onload = function (){
 
     // Set history page to open to explorer, sets placeholder to testnet or mainnet prefix & sets ticker according to mainnet or testnet
     if (apiget == "mainnet" || apiget == null) {
-        api = "https://api.sugarchain.org"
-        prefix = "SUGAR"
-        inputPlaceholder.attr("placeholder", "sugar1q...")
-        href = "https://sugarchain.org/explorer/#/address/" + getaddress
+        api = "https://api.bitwebcore.org"
+        prefix = "BTE"
+        inputPlaceholder.attr("placeholder", "web1q...")
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
         $("#history").attr("href", href)
     }
     else if (apiget == "testnet"){
-        api = "https://api-testnet.sugarchain.org"
-        prefix = "TUGAR"
+        api = "https://api-testnet.bitwebcore.org"
+        prefix = "TBTE"
         inputPlaceholder.attr("placeholder", "tugar1q...")
-        href = "https://sugar.wtf/#/address/" + getaddress
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
         $("#history").attr("href", href)
     }
 
@@ -91,7 +91,7 @@ window.onload = function (){
                 qrcodegen()
             }
             else {
-                $("#currentBalance").text("Enter a valid Sugarchain address")
+                $("#currentBalance").text("Enter a valid Bitweb address")
                 $("#currentRecieved").text("")
                 $("#currentSpent").text("")
             }
@@ -109,10 +109,10 @@ window.onload = function (){
 // Generate QR code
 function qrcodegen() {
     if (!document.getElementById("addressInput").value) {
-        sugarqrcode.makeCode("Enter an address")
+        bteqrcode.makeCode("Enter an address")
     }
     else {
-        sugarqrcode.makeCode(document.getElementById("addressInput").value)
+        bteqrcode.makeCode(document.getElementById("addressInput").value)
     }
 }
 

@@ -10,15 +10,15 @@ window.onload = function (){
 
     // Set history page to open to explorer according to mainnet or testnet & set ticker according to mainnet or testnet
     if (apiget == "mainnet" || apiget == null) {
-        api = "https://api.sugarchain.org"
-        prefix = "SUGAR"
-        href = "https://sugarchain.org/explorer/#/address/" + getaddress
+        api = "https://api.bitwebcore.org"
+        prefix = "BTE"
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
         $("#history").attr("href", href)
     }
     else if (apiget == "testnet"){
-        api = "https://api-testnet.sugarchain.org"
-        prefix = "TUGAR"
-        href = "https://sugar.wtf/#/" + getaddress
+        api = "https://api-testnet.bitwebcore.org"
+        prefix = "TBTE"
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
         $("#history").attr("href", href)
     }
 

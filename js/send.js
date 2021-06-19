@@ -21,14 +21,14 @@ window.onload = function() {
 
     // Set history page to open to explorer & sets placeholder to testnet or mainnet prefix
     if (apiget == "mainnet" || apiget == null) {
-        api = "https://api.sugarchain.org"
-        inputPlaceholder.attr("placeholder", "sugar1q...")
-        href = "https://sugarchain.org/explorer/#/address/" + address
+        api = "https://api.bitwebcore.org"
+        inputPlaceholder.attr("placeholder", "web1q...")
+        href = "https://explorer.bitwebcore.org/address/" + address
     }
     else if (apiget == "testnet"){
-        api = "https://api-testnet.sugarchain.org"
+        api = "https://api-testnet.bitwebcore.org"
         inputPlaceholder.attr("placeholder", "tugar1q...")
-        href = "https://sugar.wtf/#/address/" + address
+        href = "https://explorer.bitwebcore.org/address/" + address
     }
     $("#history").attr("href", href)
 
@@ -38,25 +38,25 @@ window.onload = function() {
 var errororsuccess
 function getSendAPI() {
     // Set Network config according to Endpoint selection
-    if (localStorage.getItem("api") == "https://api.sugarchain.org" || localStorage.getItem("api") == null){
+    if (localStorage.getItem("api") == "https://api.bitwebcore.org" || localStorage.getItem("api") == null){
         netconfig = {					
            'network': {
-                'messagePrefix': '\x19Sugarchain Signed Message:\n',
+                'messagePrefix': '\x19Bitweb Signed Message:\n',
                 'bip32': {
                     'public': 0x0488b21e,
                     'private': 0x0488ade4
                 },
-               'bech32': 'sugar',
-               'pubKeyHash': 0x3F,
-               'scriptHash': 0x7D,
+               'bech32': 'web',
+               'pubKeyHash': 0x21,
+               'scriptHash': 0x1E,
                 'wif': 0x80}
         }
     }
       
-    else if (localStorage.getItem("api") == "https://api-testnet.sugarchain.org") {
+    else if (localStorage.getItem("api") == "https://api-testnet.bitwebcore.org") {
         netconfig = {					
            'network': {
-                'messagePrefix': '\x19Sugarchain Signed Message:\n',
+                'messagePrefix': '\x19Bitweb Signed Message:\n',
                 'bip32': {
                     'public': 0x0488b21e,
                     'private': 0x0488ade4
@@ -70,7 +70,7 @@ function getSendAPI() {
 }
 
 $("#sendTx").click(function () {
-    var feeinput = document.getElementById("feeSugar")
+    var feeinput = document.getElementById("feeBte")
     console.log(feeinput.value)
     var fee = undefined
     var feeShow = undefined
@@ -83,13 +83,13 @@ $("#sendTx").click(function () {
         feeShow = convertAmountFormat(fee)
     }
     // Don't put fee in convertion of amount format
-    var amount = convertAmountFormat(parseFloat($("#amountSUGAR").val()), true) + fee
+    var amount = convertAmountFormat(parseFloat($("#amountBTE").val()), true) + fee
     var amountShow = convertAmountFormat(amount)
     var receiver = $("#sendInput").val()
 
     var scripts = []
 
-    ask = confirm("Confirm Transaction. You are about to send " + $("#amountSUGAR").val() + " SUGAR to " + receiver + ". The fee is " + feeShow/*(amountShow - Number($("#amountSUGAR").val()))*/ + " SUGAR\nTotal Cost: " + amountShow + " SUGAR")
+    ask = confirm("Confirm Transaction. You are about to send " + $("#amountBTE").val() + " BTE to " + receiver + ". The fee is " + feeShow/*(amountShow - Number($("#amountBTE").val()))*/ + " BTE\nTotal Cost: " + amountShow + " BTE")
     if (ask == true){
         var showErrororSuccess = $("#showErrororSuccess")
         showErrororSuccess.text("Sending Transaction...")
@@ -221,9 +221,9 @@ function scriptType(script) {
 
 // Reset the values after user sends
 function resetForm() {
-    $("#amountSUGAR").val('')
+    $("#amountBTE").val('')
     $("#sendInput").val('')
-    $("#feeSugar").val('')
+    $("#feeBte").val('')
 }
 
 // Conversion of standars integer to satoshis
@@ -242,7 +242,7 @@ var lang = {
     'en': {
         // Page text
         'send-to': "Send To: ",
-        'amount-sugar': "Amount: ",
+        'amount-bte': "Amount: ",
         'sendTx': "Send Transaction",
         'showErrororSuccess': {
             'success': "Success! Transaction ID: ",
@@ -273,7 +273,7 @@ var lang = {
     'fr': {
         // Page text
         'send-to': "Envoyer pour: ",
-        'amount-sugar': "Quantité: ",
+        'amount-bte': "Quantité: ",
         'sendTx': "Envoyer Transaction",
         'showErrororSuccess': {
             'success': "Succès! Transaction ID: ",
@@ -302,7 +302,7 @@ var lang = {
     'kr': {
         // Page text
         'send-to': "보내다 에게: ",
-        'amount-sugar': "양: ",
+        'amount-bte': "양: ",
         'sendTx': "보내다 트랜잭션",
         'showErrororSuccess': {
             'success': "성공! 트랜잭션 ID: ",
@@ -331,7 +331,7 @@ var lang = {
     'id': {
         // Page text
         'send-to': "Kirim Untuk: ",
-        'amount-sugar': "Jumlahnya: ",
+        'amount-bte': "Jumlahnya: ",
         'sendTx': "Kirim Transaksi",
         'showErrororSuccess': {
             'success': "Keberhasilan! Transaksi ID: ",
@@ -360,7 +360,7 @@ var lang = {
     'es': {
         // Page text
         'send-to': "Enviar a: ",
-        'amount-sugar': "Cantidad: ",
+        'amount-bte': "Cantidad: ",
         'sendTx': "Enviar Transacción",
         'showErrororSuccess': {
             'success': "Éxito! Transacción ID: ",
@@ -389,7 +389,7 @@ var lang = {
     'ru': {
         // Page text
         'send-to': "Отправить к: ",
-        'amount-sugar': "Сумма: ",
+        'amount-bte': "Сумма: ",
         'sendTx': "Отправить",
         'showErrororSuccess': {
             'success': "Транзакция успешно отправлена: ",
@@ -418,7 +418,7 @@ var lang = {
     'zh': {
         // Page text
         'send-to': "发送至: ",
-        'amount-sugar': "数量: ",
+        'amount-bte': "数量: ",
         'sendTx': "发送交易",
         'showErrororSuccess': {
             'success': "成功! 交易 ID: ",
@@ -447,7 +447,7 @@ var lang = {
     'ja': {
         // Page text
         'send-to': "に 送る: ",
-        'amount-sugar': "量: ",
+        'amount-bte': "量: ",
         'sendTx': "送る トランザクション",
         'showErrororSuccess': {
             'success': "成功! トランザクション ID: ",
@@ -479,7 +479,7 @@ function setSendPageLang() {
     if (localStorage['lang'] == null) {
         // Page Text
         $("#send-to").text(lang['en']['send-to'])
-        $("#amount-sugar").text(lang['en']['amount-sugar'])
+        $("#amount-bte").text(lang['en']['amount-bte'])
         $("#sendTx").text(lang['en']['sendTx'])
         $("#part1").text(lang['en']['logoutreminder']['part1'])
         $("#logoutlink").text(lang['en']['logoutreminder']['logoutlink'])
@@ -499,7 +499,7 @@ function setSendPageLang() {
     else {
         // Page Text
         $("#send-to").text(lang[localStorage.getItem("lang")]['send-to'])
-        $("#amount-sugar").text(lang[localStorage.getItem("lang")]['amount-sugar'])
+        $("#amount-bte").text(lang[localStorage.getItem("lang")]['amount-bte'])
         $("#sendTx").text(lang[localStorage.getItem("lang")]['sendTx'])
         $("#part1").text(lang[localStorage.getItem("lang")]['logoutreminder']['part1'])
         $("#logoutlink").text(lang[localStorage.getItem("lang")]['logoutreminder']['logoutlink'])

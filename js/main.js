@@ -16,10 +16,10 @@ window.onload = function() {
 
     // Sets History Tab to open to explorer
     if (apiget == "mainnet" || apiget == null) {
-        href = "https://sugarchain.org/explorer/#/address/" + getaddress
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
     }
     else if (apiget == "testnet") {
-        href = "https://sugar.wtf/#/address/" + getaddress
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
     }
     $("#history").attr("href", href)
 
@@ -29,25 +29,25 @@ window.onload = function() {
 
 function getMainAPI() {
     // Set Network config according to Endpoint selection
-    if (localStorage.getItem("api") == "https://api.sugarchain.org" || localStorage.getItem("api") == null){
+    if (localStorage.getItem("api") == "https://api.bitwebcore.org" || localStorage.getItem("api") == null){
         netconfig = {					
            'network': {
-                'messagePrefix': '\x19Sugarchain Signed Message:\n',
+                'messagePrefix': '\x19Bitweb Signed Message:\n',
                 'bip32': {
                     'public': 0x0488b21e,
                     'private': 0x0488ade4
                 },
-               'bech32': 'sugar',
-               'pubKeyHash': 0x3F,
-               'scriptHash': 0x7D,
+               'bech32': 'web',
+               'pubKeyHash': 0x21,
+               'scriptHash': 0x1E,
                 'wif': 0x80}
         }
     }
     
-    else if (localStorage.getItem("api") == "https://api-testnet.sugarchain.org") {
+    else if (localStorage.getItem("api") == "https://api-testnet.bitwebcore.org") {
         netconfig = {					
             'network': {
-                'messagePrefix': '\x19Sugarchain Signed Message:\n',
+                'messagePrefix': '\x19Bitweb Signed Message:\n',
                 'bip32': {
                     'public': 0x0488b21e,
                     'private': 0x0488ade4
@@ -95,10 +95,10 @@ $("#generateAddress").click(function() {
 
     // Sets History Tab to open to explorer
     if (apiget == "mainnet" || apiget == null) {
-        href = "https://sugarchain.org/explorer/#/address/" + getaddress
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
     }
     else if (apiget == "testnet") {
-        href = "https://sugar.wtf/#/address/" + getaddress
+        href = "https://explorer.bitwebcore.org/address/" + getaddress
     }
     $("#history").attr("href", href)
 })
@@ -111,7 +111,7 @@ var lang = {
         'addressTypeLabel': "Address type:",
         'your-address': "Your Address:",
         'your-wif': "Your WIF:",
-        'importantmsg': "IMPORTANT: Make sure you store your WIF key in a secure place before doing anything else",
+        'importantmsg': "IMPORTANT: Make sure you backup and store your WIF key in a secure place before doing anything else",
         'alertmsg': "Address Generated Successfully",
         'logoutreminder': {
             'part1': "Remember to",
@@ -136,7 +136,7 @@ var lang = {
         'addressTypeLabel': "Adresse Catégorie:",
         'your-address': "Votre Adresse:",
         'your-wif': "Votre WIF:",
-        'importantmsg': "IMPORTANT: Assurez-vous conserver votre WIF clé dans un sécurise endroit avant faire quelque chose autre",
+        'importantmsg': "IMPORTANT: Assurez-vous que vous bakup et conserver votre WIF clé dans un sécurise endroit avant faire quelque chose autre",
         'alertmsg': "Adresse Généré Avec succès",
         'logoutreminder': {
             'part1': "Se souvenir de",
@@ -160,7 +160,7 @@ var lang = {
         'addressTypeLabel': "주소를 유형:",
         'your-address': "너의 주소를:",
         'your-wif': "너의 WIF:",
-        'importantmsg': "중대한: 하다 확실한 당신 저장되다 너의 WIF 열쇠 안에 튼튼한 곳 전에 하기 아무것도 그밖에",
+        'importantmsg': "중대한: 다른 작업을 수행하기 전에 WIF 키를 안전한 장소에 백업하고 보관하십시오.",
         'alertmsg': "주소 생성됨 성공적으로",
         'logoutreminder': {
             'part1': "기억해",
@@ -184,7 +184,7 @@ var lang = {
         'addressTypeLabel': "Tipe Alamat:",
         'your-address': "Anda Alamat:",
         'your-wif': "Anda WIF:",
-        'importantmsg': "Penting: Yakinkan kamu menyimpan Anda WIF kunci di sebuah tempat yang aman sebelum perbuatan ada yang lain",
+        'importantmsg': "Penting: Pastikan Anda mencadangkan dan menyimpan kunci WIF di tempat yang aman sebelum melakukan hal lain",
         'alertmsg': "Alamat Dihasilkan Berhasil",
         'logoutreminder': {
             'part1': "Ingat untuk",
@@ -208,7 +208,7 @@ var lang = {
         'addressTypeLabel': "Tipo Dirección:",
         'your-address': "Tu alocución:",
         'your-wif': "Tu WIF:",
-        'importantmsg': "Importante: Asegurarse tú almacenar Tu WIF llave en un seguro lugar antes de hacer Algo más",
+        'importantmsg': "Importante: Asegúrese de hacer una copia de seguridad y almacenar su clave WIF en un lugar seguro antes de hacer cualquier otra cosa",
         'alertmsg': "Alocución Generado Exitosamente",
         'logoutreminder': {
             'part1': "Recuerda a",
@@ -232,7 +232,7 @@ var lang = {
         'addressTypeLabel': "Тип адреса:",
         'your-address': "Ваш адрес:",
         'your-wif': "Ваш WIF ключ:",
-        'importantmsg': "Важно: Убедитесь, что вы храните ваш ключ WIF в безопасном месте, прежде чем делать что-либо еще",
+        'importantmsg': "Важно: Убедитесь, что вы сохранили и поместили ваш WIF ключ в безопасное место, прежде чем делать что-либо еще",
         'alertmsg': "Адрес сгенерировано успешно",
         'logoutreminder': {
             'part1': "Помните в",
@@ -256,7 +256,7 @@ var lang = {
         'addressTypeLabel': "地址类型:",
         'your-address': "你的地址:",
         'your-wif': "你的WIF:",
-        'importantmsg': "重要: 在执行其他任何操作之前，请确保将WIF密钥存储在安全的地方",
+        'importantmsg': "重要: 在执行任何其他操作之前，请务必备份 WIF 密钥并将其存放在安全的地方",
         'alertmsg': "地址产生的成功",
         'logoutreminder': {
             'part1': "记得 至",
@@ -280,7 +280,7 @@ var lang = {
         'addressTypeLabel': "アドレス 形式:",
         'your-address': "きみの アドレス:",
         'your-wif': "きみの WIF:",
-        'importantmsg': "重要: 他の作業を行う前に、WIFキーを安全な場所に保管してください。",
+        'importantmsg': "重要: 他の作業を行う前に、WIFキーを安全な場所にバックアップして保存してください。",
         'alertmsg': "住所 生成された 成功した",
         'logoutreminder': {
             'part1': "覚えて に",
