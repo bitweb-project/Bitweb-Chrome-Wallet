@@ -21,14 +21,14 @@ window.onload = function() {
 
     // Set history page to open to explorer & sets placeholder to testnet or mainnet prefix
     if (apiget == "mainnet" || apiget == null) {
-        api = "https://api.bitwebcore.org"
+        api = "https://bitwebapi.scalaris.info"
         inputPlaceholder.attr("placeholder", "web1q...")
-        href = "https://explorer.bitwebcore.org/address/" + address
+        href = "https://bitwebexplorer.scalaris.info/address/" + address
     }
     else if (apiget == "testnet"){
         api = "https://api-testnet.bitwebcore.org"
         inputPlaceholder.attr("placeholder", "tugar1q...")
-        href = "https://explorer.bitwebcore.org/address/" + address
+        href = "https://bitwebexplorer.scalaris.info/address/" + address
     }
     $("#history").attr("href", href)
 
@@ -38,7 +38,7 @@ window.onload = function() {
 var errororsuccess
 function getSendAPI() {
     // Set Network config according to Endpoint selection
-    if (localStorage.getItem("api") == "https://api.bitwebcore.org" || localStorage.getItem("api") == null){
+    if (localStorage.getItem("api") == "https://bitwebapi.scalaris.info" || localStorage.getItem("api") == null){
         netconfig = {					
            'network': {
                 'messagePrefix': '\x19Bitweb Signed Message:\n',

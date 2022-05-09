@@ -10,15 +10,15 @@ window.onload = function (){
 
     // Set history page to open to explorer according to mainnet or testnet & set ticker according to mainnet or testnet
     if (apiget == "mainnet" || apiget == null) {
-        api = "https://api.bitwebcore.org"
+        api = "https://bitwebapi.scalaris.info"
         prefix = "BTE"
-        href = "https://explorer.bitwebcore.org/address/" + getaddress
+        href = "https://bitwebexplorer.scalaris.info/address/" + getaddress
         $("#history").attr("href", href)
     }
     else if (apiget == "testnet"){
         api = "https://api-testnet.bitwebcore.org"
         prefix = "TBTE"
-        href = "https://explorer.bitwebcore.org/address/" + getaddress
+        href = "https://bitwebexplorer.scalaris.info/address/" + getaddress
         $("#history").attr("href", href)
     }
 

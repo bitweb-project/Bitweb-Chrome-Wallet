@@ -1,4 +1,4 @@
-//api = "https://api.bitwebcore.org"
+//api = "https://bitwebapi.scalaris.info"
 //localStorage.setItem("api", api)
 var href
 var selectedEndpoint = document.getElementById("endpointSelect")
@@ -14,10 +14,10 @@ window.onload = function() {
 
     // Sets History Tab to open to explorer according to testnet or mainnet
     if (apiget == "mainnet" || apiget == null) {
-        href = "https://explorer.bitwebcore.org/address/" + getaddress
+        href = "https://bitwebexplorer.scalaris.info/address/" + getaddress
     }
     else if (apiget == "testnet"){
-        href = "https://explorer.bitwebcore.org/address/" + getaddress
+        href = "https://bitwebexplorer.scalaris.info/address/" + getaddress
     }
     $("#history").attr("href", href)
 
@@ -37,7 +37,7 @@ selectedEndpoint.onchange = function () {
     document.location.reload()
 }
 
-var mainnet = "https://api.bitwebcore.org"
+var mainnet = "https://bitwebapi.scalaris.info"
 var testnet = "https://api-testnet.bitwebcore.org"
 // Set the api in local storage
 function setAPI() {
