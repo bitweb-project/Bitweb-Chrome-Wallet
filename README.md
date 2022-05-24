@@ -1,5 +1,5 @@
 # Bitweb-Chrome-Wallet
-Light Bitweb Web wallet in the form of a chrome extension which utilises bitcoin.js and a simple REST API https://bitwebapi.scalaris.info
+Light Bitweb Web wallet in the form of a chrome extension which utilises bitcoin.js and a simple REST API https://api.bitwebcore.net
 
 
 ### Installation

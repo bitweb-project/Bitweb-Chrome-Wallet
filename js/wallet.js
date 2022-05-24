@@ -31,17 +31,17 @@ window.onload = function (){
 
     // Set history page to open to explorer, sets placeholder to testnet or mainnet prefix & sets ticker according to mainnet or testnet
     if (apiget == "mainnet" || apiget == null) {
-        api = "https://bitwebapi.scalaris.info"
+        api = "https://api.bitwebcore.net"
         prefix = "BTE"
         inputPlaceholder.attr("placeholder", "web1q...")
-        href = "https://bitwebexplorer.scalaris.info/address/" + getaddress
+        href = "https://explorer.bitwebcore.net/address/" + getaddress
         $("#history").attr("href", href)
     }
     else if (apiget == "testnet"){
         api = "https://api-testnet.bitwebcore.org"
         prefix = "TBTE"
         inputPlaceholder.attr("placeholder", "tugar1q...")
-        href = "https://bitwebexplorer.scalaris.info/address/" + getaddress
+        href = "https://explorer.bitwebcore.net/address/" + getaddress
         $("#history").attr("href", href)
     }
 

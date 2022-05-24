@@ -16,10 +16,10 @@ window.onload = function() {
 
     // Sets History Tab to open to explorer
     if (apiget == "mainnet" || apiget == null) {
-        href = "https://bitwebexplorer.scalaris.info/address/" + getaddress
+        href = "https://explorer.bitwebcore.net/address/" + getaddress
     }
     else if (apiget == "testnet") {
-        href = "https://bitwebexplorer.scalaris.info/address/" + getaddress
+        href = "https://explorer.bitwebcore.net/address/" + getaddress
     }
     $("#history").attr("href", href)
 
@@ -29,7 +29,7 @@ window.onload = function() {
 
 function getMainAPI() {
     // Set Network config according to Endpoint selection
-    if (localStorage.getItem("api") == "https://bitwebapi.scalaris.info" || localStorage.getItem("api") == null){
+    if (localStorage.getItem("api") == "https://api.bitwebcore.net" || localStorage.getItem("api") == null){
         netconfig = {					
            'network': {
                 'messagePrefix': '\x19Bitweb Signed Message:\n',
@@ -95,10 +95,10 @@ $("#generateAddress").click(function() {
 
     // Sets History Tab to open to explorer
     if (apiget == "mainnet" || apiget == null) {
-        href = "https://bitwebexplorer.scalaris.info/address/" + getaddress
+        href = "https://explorer.bitwebcore.net/address/" + getaddress
     }
     else if (apiget == "testnet") {
-        href = "https://bitwebexplorer.scalaris.info/address/" + getaddress
+        href = "https://explorer.bitwebcore.net/address/" + getaddress
     }
     $("#history").attr("href", href)
 })
