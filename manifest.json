@@ -1,9 +1,9 @@
 {
     "name": "Bitweb Wallet Extension",
     "version": "1.0",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "description": "Light Web Wallet for Bitweb as a Chrome Extension.",
-    "browser_action": {
+    "action": {
         "default_popup": "overlay.html",
         "default_title": "Bitweb Wallet",
         "default_icon": "img/logo.png"
